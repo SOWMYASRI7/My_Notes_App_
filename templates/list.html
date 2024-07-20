@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}List of Notes{% endblock %}
+{% block main %}
+  <h3>List Notes</h3>
+  <div class="container">
+  <table class="table table-light border-success table-hover">
+    <thead>
+        <tr> <th>#</th> <th>title</th> <th></th></tr>
+    </thead>
+    {% for note in notes %}
+    <tbody>
+        <tr> <td>{{note.id}}</td> <td>{{note.title}}</td>
+        <td align="right">
+            <a href="/view/{{note.id}}" class="btn btn-success">view</a>
+            <a href="/edit/{{note.id}}" class="btn btn-warning">edit</a>
+            <form method="POST" action="/delete" style="display:inline;">
+              <input type="hidden" name="id" value="{{ note.id }}"/>
+            
+            <button type="submit" class="btn btn-danger">delete</button>
+          </form>
+        </td></tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+ 

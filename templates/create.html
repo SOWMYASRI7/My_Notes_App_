@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}create Notes{% endblock %}
+{% block main %}
+  <h3>New Notes</h3>
+  <div class="container">
+    <form method="POST">
+  <div class="form-group m-2">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" id="title" class="form-control"
+    placeholder="type here the title...."
+    name="title" value="{{ note.title }}"/>
+  </div>
+  <div class="form-group m-2">
+    <label for="notes" >Notes</label>
+    <textarea type="text" id="title" class="form-control"
+    placeholder="type here the notes...." name="notes">{{ note.notes }}</textarea> 
+  </div>
+  <button type="submit" class="btn btn-success">create</button>
+</form>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}

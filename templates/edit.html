@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Edit Notes{% endblock %}
+{% block main %}
+  <h3><a href="list.html" class="btn btn-light">go back</a>Edit Notes</h3>
+  <div class="container">
+    <form method="POST">
+    <div class="form-group m-2">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" id="title" class="form-control"
+      placeholder="type here the title...."
+      name="title" value="{{ note.title }}"/>
+    </div>
+    <div class="form-group m-2">
+      <label for="notes" class="form-label">Notes</label>
+      <textarea  id="notes" class="form-control"
+      placeholder="type here the notes...."
+      name="notes"/>{{note.notes}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-danger">update</button>
+  </form>
+  </div>
+  {% endblock %}

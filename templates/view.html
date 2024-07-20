@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}View Notes{% endblock %}
+{% block main %}
+    
+      <h3><a href="/list" class="btn btn-light">go back</a>View Notes</h3>
+      <div class="container">
+        <div class="form-group m-2">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" id="title" class="form-control"
+          placeholder="type here the title...." readonly
+          value="{{ note.title }}"/>
+        </div>
+        <div class="form-group m-2">
+          <label for="notes" class="form-label">Notes</label>
+          <textarea  id="notes" class="form-control"
+          placeholder="type here the notes...." readonly
+          >{{ note.notes }}</textarea>
+        </div>
+      </div>
+  
+{% endblock %}
